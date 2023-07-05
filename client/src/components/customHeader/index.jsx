@@ -1,7 +1,15 @@
 import React from 'react'
 import { ChatBubbleLeftRightIcon, PhoneIcon } from "@heroicons/react/24/solid" ;
+import PropTypes from 'prop-types';
+
 
 const CustomHeader = ({ chat }) => {
+ 
+  // console.log("chat-description", chat.description)
+ 
+  
+
+
   return (
     <div className='chat-header'>
       <div className='flexbetween'>
@@ -11,7 +19,11 @@ const CustomHeader = ({ chat }) => {
       </div>
      <div className='flexBetween'>
         <PhoneIcon  className='icon-phone' />
-        <p className='header-text' >{chat.description}</p>
+        {chat.description !== "⬅️ ⬅️ ⬅️" ? <p className='header-text' >{chat.description}</p> :
+        
+        <p className='header-text' > no chat selected </p>
+        }
+        
 
      </div>
 
